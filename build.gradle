@@ -29,17 +29,37 @@ ext {
 }
 
 dependencies {
+    // authentication server
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-authorization-server'
+
+    // oauth2 client
+    implementation "org.springframework.boot:spring-boot-starter-oauth2-client"
+
+    // security
     implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // web
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.testcontainers:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.testcontainers:mysql'
+    testImplementation 'org.testcontainers:junit-jupiter'
+
+    // spring-restdocs
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+
+    // database
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
 tasks.named('test') {

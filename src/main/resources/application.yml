@@ -3,7 +3,7 @@ spring:
     name: AuthorizationServer
   profiles:
     group:
-      common: auth
+      common: auth, db
       local: common
       dev: common
     active: local
